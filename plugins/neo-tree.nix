@@ -17,29 +17,31 @@ in {
 
   plugins.neo-tree = {
     enable = true;
-    enableDiagnostics = true;
-    enableGitStatus = true;
-    enableModifiedMarkers = true;
-    closeIfLastWindow = true;
-    popupBorderStyle = "rounded";
-    sources = [
-      "filesystem"
-      "buffers"
-      "git_status"
-    ];
-    sourceSelector = {
-      winbar = true;
-      statusline = true;
-    };
-    buffers = {
-      bindToCwd = false;
-      followCurrentFile = {
-        enabled = true;
+    settings = {
+      enable_diagnostics = true;
+      enable_git_status = true;
+      enable_modified_markers = true;
+      close_if_last_window = true;
+      popup_border_style = "rounded";
+      sources = [
+        "filesystem"
+        "buffers"
+        "git_status"
+      ];
+      source_selector = {
+        winbar = true;
+        statusline = true;
       };
-    };
-    filesystem = {
-      useLibuvFileWatcher = true;
-      followCurrentFile.enabled = true;
+      buffers = {
+        bind_to_cwd = false;
+        follow_current_file = {
+          enabled = true;
+        };
+      };
+      filesystem = {
+        use_libuv_file_watcher = true;
+        follow_current_file.enabled = true;
+      };
     };
   };
 
