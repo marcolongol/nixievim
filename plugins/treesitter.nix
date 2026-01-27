@@ -1,8 +1,9 @@
-{
+{pkgs, ...}: {
   plugins = {
     mini-ai.enable = true;
     treesitter = {
       enable = true;
+      folding = true;
       settings = {
         highlight = {
           enable = true;
@@ -11,12 +12,32 @@
             "markdown"
           ];
         };
-        auto_install = true;
-        indent_enable = true;
-        folding = true;
-        autoLoad = true;
-        incremental_selection.enable = true;
+        indent = {
+          enable = true;
+        };
+        incremental_selection = {
+          enable = true;
+        };
       };
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        bash
+        c
+        cpp
+        css
+        html
+        javascript
+        json
+        lua
+        markdown
+        nix
+        python
+        rust
+        toml
+        typescript
+        vim
+        vimdoc
+        yaml
+      ];
     };
     treesitter-context = {
       enable = true;
