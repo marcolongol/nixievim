@@ -29,6 +29,7 @@
       self.nixiePlugins.lsp
       self.nixiePlugins.lang
       self.nixiePlugins.dashboard
+      self.nixiePlugins.sops
     ];
 in {
   packages = {
