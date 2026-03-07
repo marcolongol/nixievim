@@ -18,6 +18,7 @@
     self.nixiePlugins.treesitter
     self.nixiePlugins.git
     self.nixiePlugins.ux
+    self.nixiePlugins.snacks
   ];
   coreModules =
     baseModules
@@ -25,10 +26,8 @@
       self.nixiePlugins.firenvim
       self.nixiePlugins.ai
       self.nixiePlugins.blink-cmp
-      self.nixiePlugins.telescope
       self.nixiePlugins.lsp
       self.nixiePlugins.lang
-      self.nixiePlugins.dashboard
       self.nixiePlugins.sops
     ];
 in {

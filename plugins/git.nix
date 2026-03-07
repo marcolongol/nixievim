@@ -17,9 +17,6 @@ in {
         current_line_blame = true;
       };
     };
-    lazygit = {
-      enable = true;
-    };
     gitignore = {
       enable = true;
     };
@@ -27,13 +24,11 @@ in {
 
   wKeyList = [
     (wKeyObj ["<leader>g" "" "git"])
-    (wKeyObj ["<leader>gg" "" "lazygit"])
     (wKeyObj ["<leader>gh" "󰫅" "hunks"])
     (wKeyObj ["<leader>gb" "󰭐" "blame"])
   ];
 
   keymaps = [
-    (mkKeymap "n" "<leader>gg" "<cmd>LazyGit<cr>" "LazyGit")
     (mkKeymap "n" "<leader>ghS" "<cmd>lua require('gitsigns').stage_buffer()<cr>" "Stage Buffer")
     (mkKeymap "n" "<leader>ghu" "<cmd>lua require('gitsigns').undo_stage_hunk()<cr>" "Undo Stage Hunk")
     (mkKeymap "n" "<leader>ghR" "<cmd>lua require('gitsigns').reset_buffer()<cr>" "Reset Buffer")

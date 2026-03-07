@@ -22,20 +22,10 @@ in {
     require("claudecode").setup({
       auto_start = true,
       track_selection = true,
-      terminal = {
-        provide = "auto",
-        split_side = "right",
-        split_width_percentage = 0.30,
-        auto_close = true,
-      },
     })
   '';
 
   plugins = {
-    snacks = {
-      enable = true;
-      settings.terminal.enabled = true;
-    };
     copilot-lua = {
       enable = true;
       settings = {
