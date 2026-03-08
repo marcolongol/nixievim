@@ -38,6 +38,7 @@
         vim
         vimdoc
         yaml
+        helm
       ];
     };
     treesitter-context = {
