@@ -20,6 +20,7 @@
         };
       };
       grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        angular
         bash
         c
         cpp

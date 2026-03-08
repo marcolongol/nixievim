@@ -3,6 +3,11 @@
     ts-autotag.enable = true;
     ts-comments.enable = true;
     lsp.servers = {
+      angularls = {
+        enable = true;
+        filetypes = [ "html" "typescript" "typescriptreact" "typescript.tsx" "htmlangular" ];
+        rootMarkers = [ "angular.json" "project.json" "nx.json" "tsconfig.json" ];
+      };
       ts_ls.enable = true;
       eslint.enable = true;
       tailwindcss.enable = true;
