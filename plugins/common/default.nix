@@ -17,18 +17,17 @@ in {
     vim.opt.whichwrap:append("<>[]hl")
     vim.opt.listchars:append("space:·")
 
-    -- below part set's the Diagnostic icons/colors
-    local signs = {
-      Hint = "💡";
-      Error = "\u{ea87}",
-      Warn = "\u{f071}",
-      Info = "\u{f05a}",
-    }
-
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-    end
+    -- Diagnostic signs (new API, replaces deprecated sign_define)
+    vim.diagnostic.config({
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = "\xef\x80\x97", -- nf-fa-times_circle
+          [vim.diagnostic.severity.WARN]  = "\xef\x81\xb1", -- nf-fa-exclamation_triangle
+          [vim.diagnostic.severity.INFO]  = "\xef\x81\x9a", -- nf-fa-info_circle
+          [vim.diagnostic.severity.HINT]  = "\xef\x83\xab", -- nf-fa-lightbulb_o
+        },
+      },
+    })
   '';
 
   # SECTION: Options
