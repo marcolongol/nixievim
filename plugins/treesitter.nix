@@ -39,6 +39,7 @@
         vimdoc
         yaml
         helm
+        starlark
       ];
     };
     treesitter-context = {
