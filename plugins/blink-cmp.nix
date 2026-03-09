@@ -21,6 +21,7 @@ in {
         };
         keymap = {preset = "enter";};
         signature = {enabled = true;};
+        completion.ghost_text.enabled = true;
         sources = {
           default = ["lsp" "path" "snippets" "buffer" "copilot"];
           providers = {

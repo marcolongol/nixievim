@@ -33,12 +33,8 @@ in {
       rename.enabled = true;
       gitbrowse.enabled = true;
 
-      # Notifications (note: noice also handles vim.notify — disable one if they conflict)
-      notifier = {
-        enabled = true;
-        timeout = 3000;
-        style = "compact";
-      };
+      # Notifications handled by noice
+      notifier.enabled = false;
 
       terminal.enabled = true;
       lazygit.enabled = true;

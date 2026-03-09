@@ -7,6 +7,22 @@
   inherit (config.nixievim.mkKey) mkKeymap wKeyObj;
   inherit (lib.nixvim) mkRaw;
 in {
+  extraConfigLuaPre = ''
+    -- Returns true if no prettier config is found upward from the buffer's directory
+    no_prettier = function(ctx)
+      local prettier_files = { ".prettierrc", ".prettierrc.js", ".prettierrc.cjs", ".prettierrc.json", ".prettierrc.yml", ".prettierrc.yaml", "prettier.config.js", "prettier.config.cjs" }
+      if vim.fs.find(prettier_files, { upward = true, path = ctx.dirname })[1] then
+        return false
+      end
+      local pkg = vim.fs.find("package.json", { upward = true, path = ctx.dirname })[1]
+      if pkg then
+        local ok, decoded = pcall(vim.fn.json_decode, vim.fn.readfile(pkg))
+        if ok and decoded and decoded.prettier then return false end
+      end
+      return true
+    end
+  '';
+
   plugins = {
     lsp = {
       enable = true;
@@ -31,6 +47,13 @@ in {
             "trim_whitespace"
             "trim_newlines"
           ];
+          javascript = [{ name = "biome"; condition = mkRaw "no_prettier"; }];
+          typescript = [{ name = "biome"; condition = mkRaw "no_prettier"; }];
+          javascriptreact = [{ name = "biome"; condition = mkRaw "no_prettier"; }];
+          typescriptreact = [{ name = "biome"; condition = mkRaw "no_prettier"; }];
+          json = [{ name = "biome"; condition = mkRaw "no_prettier"; }];
+          html = [{ name = "biome"; condition = mkRaw "no_prettier"; }];
+          css = [{ name = "biome"; condition = mkRaw "no_prettier"; }];
         };
         formatters.squeeze_blanks.command = lib.getExe' pkgs.coreutils "cat";
       };

@@ -44,6 +44,9 @@ in {
     (mkKeymap "n" "<leader>gb" "<cmd>lua require('gitsigns').blame_line()<cr>" "Blame")
     (mkKeymap "n" "<leader>ghd" "<cmd>lua require('gitsigns').diffthis()<cr>" "Diff This")
     (mkKeymap "n" "<leader>ghD" "<cmd>lua require('gitsigns').diffthis('~')<cmd>" "Diff This ~")
+    (mkKeymap "n" "]h" "<cmd>lua require('gitsigns').nav_hunk('next')<cr>" "Next Hunk")
+    (mkKeymap "n" "[h" "<cmd>lua require('gitsigns').nav_hunk('prev')<cr>" "Prev Hunk")
+
     (mkKeymap "n" "]H"
       (
         mkRaw # lua
