@@ -25,6 +25,10 @@
         c
         cpp
         css
+        dockerfile
+        git_commit
+        gitignore
+        helm
         html
         javascript
         json
@@ -32,18 +36,14 @@
         markdown
         nix
         python
+        regex
         rust
+        starlark
         toml
         typescript
         vim
         vimdoc
         yaml
-        dockerfile
-        helm
-        starlark
-        regex
-        git_commit
-        gitignore
       ];
     };
     treesitter-context = {
