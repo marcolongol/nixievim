@@ -41,6 +41,9 @@
         dockerfile
         helm
         starlark
+        regex
+        git_commit
+        gitignore
       ];
     };
     treesitter-context = {

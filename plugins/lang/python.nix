@@ -17,6 +17,7 @@
         };
       };
     };
+    conform-nvim.settings.formatters_by_ft.python = ["ruff_format"];
     lsp.servers = {
       ruff.enable = true;
       pyright = {
