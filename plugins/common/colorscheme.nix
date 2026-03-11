@@ -19,20 +19,24 @@
         transparent_background = true;
       };
     };
-    nightfox = {
+    # nightfox = {
+    #   enable = true;
+    #   flavor = "carbonfox";
+    #   settings = {
+    #     transparent = true;
+    #     styles = {
+    #       comments = "italic";
+    #       keywords = "bold,italic";
+    #       functions = "italic";
+    #       variables = "none";
+    #       sidebars = "dark";
+    #       floats = "dark";
+    #     };
+    #   };
+    # };
+    base16 = {
       enable = true;
-      flavor = "carbonfox";
-      settings = {
-        transparent = true;
-        styles = {
-          comments = "italic";
-          keywords = "bold,italic";
-          functions = "italic";
-          variables = "none";
-          sidebars = "dark";
-          floats = "dark";
-        };
-      };
+      colorscheme = "tomorrow-night"; # fallback; overridden by Stylix via .extend()
     };
     tokyonight = {
       enable = false;
