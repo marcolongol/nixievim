@@ -26,7 +26,7 @@
         cpp
         css
         dockerfile
-        git_commit
+        gitcommit
         gitignore
         helm
         html
