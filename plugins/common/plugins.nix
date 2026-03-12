@@ -12,6 +12,13 @@ in {
     nvim-surround.enable = true;
     nvim-autopairs.enable = true;
     tmux-navigator.enable = true;
+    todo-comments = {
+      enable = true;
+      settings.keywords.SECTION = {
+        icon = "󰉀";
+        color = "error";
+      };
+    };
     trim.enable = true;
     smart-splits.enable = true;
     lualine.enable = true;
