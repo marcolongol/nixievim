@@ -35,6 +35,7 @@
         lua
         markdown
         nix
+        prisma
         python
         regex
         rust
