@@ -20,7 +20,7 @@
       };
     };
     nightfox = {
-      enable = true;
+      enable = false;
       flavor = "carbonfox";
       settings = {
         transparent = true;
@@ -37,6 +37,49 @@
     base16 = {
       enable = false;
       colorscheme = "tomorrow-night"; # fallback; overridden by Stylix via .extend()
+    };
+    vague = {
+      enable = false;
+      settings = {
+        transparent = true;
+        styles = {
+          comments = "italic";
+          keywords = "bold,italic";
+          functions = "italic";
+          variables = "none";
+          sidebars = "dark";
+          floats = "dark";
+        };
+      };
+    };
+    kanagawa = {
+      enable = true;
+      settings = {
+        transparent = true;
+        styles = {
+          comments = "italic";
+          keywords = "bold,italic";
+          functions = "italic";
+          variables = "none";
+          sidebars = "dark";
+          floats = "dark";
+        };
+      };
+    };
+    github-theme = {
+      enable = false;
+      settings = {
+        theme_style = "dark_default";
+        transparent = false;
+        styles = {
+          comments = "italic";
+          keywords = "bold,italic";
+          functions = "italic";
+          variables = "none";
+          sidebars = "dark";
+          floats = "dark";
+        };
+      };
     };
     tokyonight = {
       enable = false;
