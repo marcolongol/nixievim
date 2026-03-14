@@ -29,7 +29,6 @@ in {
     web-devicons.enable = true;
     nvim-surround.enable = true;
     nvim-autopairs.enable = true;
-    tmux-navigator.enable = true;
     todo-comments = {
       enable = true;
       settings.keywords.SECTION = {

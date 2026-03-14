@@ -145,6 +145,7 @@ in {
   };
 
   wKeyList = [
+    (wKeyObj ["<leader>l" "󰅩" "LSP"])
     (wKeyObj ["<leader>gg" "" "lazygit"])
     (wKeyObj ["<leader>f" "" "Find"])
     (wKeyObj ["<leader>D" "󰕮" "Dashboard"])
@@ -152,14 +153,37 @@ in {
 
   keymaps = [
     (mkKeymap "n" "<leader>gg" "<cmd>lua Snacks.lazygit()<cr>" "LazyGit")
+
+    # LSP navigation
+    (mkKeymap "n" "gd" "<cmd>lua Snacks.picker.lsp_definitions()<cr>" "Go to Definition")
+    (mkKeymap "n" "gr" "<cmd>lua Snacks.picker.lsp_references()<cr>" "Go to References")
+    (mkKeymap "n" "gi" "<cmd>lua Snacks.picker.lsp_implementations()<cr>" "Go to Implementation")
+    (mkKeymap "n" "gt" "<cmd>lua Snacks.picker.lsp_type_definitions()<cr>" "Go to Type Definition")
+    (mkKeymap "n" "<leader>ls" "<cmd>lua Snacks.picker.lsp_symbols()<cr>" "Document Symbols")
+    (mkKeymap "n" "<leader>lS" "<cmd>lua Snacks.picker.lsp_workspace_symbols()<cr>" "Workspace Symbols")
+
+    # Find
     (mkKeymap "n" "<leader>ff" "<cmd>lua Snacks.picker.files()<cr>" "Find files")
     (mkKeymap "n" "<leader>fg" "<cmd>lua Snacks.picker.grep()<cr>" "Live grep")
     (mkKeymap "n" "<leader>fb" "<cmd>lua Snacks.picker.buffers()<cr>" "Find buffers")
     (mkKeymap "n" "<leader>fh" "<cmd>lua Snacks.picker.help()<cr>" "Find help")
     (mkKeymap "n" "<leader>fr" "<cmd>lua Snacks.picker.recent()<cr>" "Recent files")
+    (mkKeymap "n" "<leader>fd" "<cmd>lua Snacks.picker.diagnostics()<cr>" "Diagnostics")
+
+    # Git
     (mkKeymap "n" "<leader>go" "<cmd>lua Snacks.gitbrowse()<cr>" "Open in browser")
+
+    # UI toggles
     (mkKeymap "n" "<leader>D" "<cmd>lua Snacks.dashboard()<cr>" "Open Dashboard")
     (mkKeymap "n" "<leader>z" "<cmd>lua Snacks.zen()<cr>" "Zen mode")
+    (mkKeymap "n" "<leader>ud" "<cmd>lua Snacks.dim.toggle()<cr>" "Toggle dim")
     (mkKeymap "n" "<leader>N" "<cmd>lua Snacks.notifier.show_history()<cr>" "Notification history")
+
+    # File rename
+    (mkKeymap "n" "<leader>tr" "<cmd>lua Snacks.rename.rename_file()<cr>" "Rename file")
+
+    # Word jumps
+    (mkKeymap "n" "]]" "<cmd>lua Snacks.words.jump(1)<cr>" "Next word occurrence")
+    (mkKeymap "n" "[[" "<cmd>lua Snacks.words.jump(-1)<cr>" "Prev word occurrence")
   ];
 }

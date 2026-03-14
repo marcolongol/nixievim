@@ -61,8 +61,8 @@ in {
     (mkKeymap "n" "<leader>xl" "<cmd>Trouble loclist toggle<cr>" "Loclist")
     (mkKeymap "n" "<leader>xq" "<cmd>Trouble qflist toggle<cr>" "Qflist")
 
-    (mkKeymap "n" "gd" "<cmd>lua vim.lsp.buf.definition()<cr>" "Go to Definition")
-    (mkKeymap "n" "gt" "<cmd>lua vim.lsp.buf.type_definition()<cr>" "Go to Type Definition")
+    # (mkKeymap "n" "gd" "<cmd>lua vim.lsp.buf.definition()<cr>" "Go to Definition")
+    # (mkKeymap "n" "gt" "<cmd>lua vim.lsp.buf.type_definition()<cr>" "Go to Type Definition")
   ];
 
   # SECTION: Auto Commands
