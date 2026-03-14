@@ -30,10 +30,14 @@
       self.nixiePlugins.lang
       self.nixiePlugins.sops
     ];
+  neovideModules = coreModules ++ [self.nixiePlugins.neovide];
 in {
   packages = {
     default = self'.packages.core;
     base = mkNixvim baseModules;
     core = mkNixvim coreModules;
+    neovide = pkgs.writeShellScriptBin "neovide" ''
+      exec ${pkgs.neovide}/bin/neovide --neovim-bin ${mkNixvim neovideModules}/bin/nvim "$@"
+    '';
   };
 }

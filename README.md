@@ -8,8 +8,9 @@ A modular, reproducible Neovim setup featuring AI integration, modern completion
 
 ```bash
 # Try instantly (no install required)
-nix run "github:marcolongol/nixievim"        # Full configuration
-nix run "github:marcolongol/nixievim#base"   # Minimal setup
+nix run "github:marcolongol/nixievim"           # Full configuration
+nix run "github:marcolongol/nixievim#base"      # Minimal setup
+nix run "github:marcolongol/nixievim#neovide"   # Neovide GUI wrapper
 ```
 
 ## Installation
@@ -27,6 +28,9 @@ home.packages = [ inputs.nixievim.packages.${pkgs.system}.default ];
 
 # NixOS
 environment.systemPackages = [ inputs.nixievim.packages.${pkgs.system}.default ];
+
+# With Neovide GUI
+home.packages = [ inputs.nixievim.packages.${pkgs.system}.neovide ];
 ```
 
 ### Individual Modules
@@ -43,6 +47,7 @@ programs.nixvim = {
 
 **Base**: Essential plugins (neo-tree, treesitter, git, bufferline)
 **Core**: Full setup with AI tools, LSP, telescope, completion, language support
+**Neovide**: Core wrapped for the [Neovide](https://neovide.dev) GUI — includes transparency, animations, and font config
 
 ## Features
 
@@ -56,7 +61,7 @@ programs.nixvim = {
 
 **Core**: `common`, `neo-tree`, `telescope`, `treesitter`, `git`, `bufferline`, `dashboard`
 **Languages**: `lang.nix`, `lang.python`, `lang.lua`, `lang.md`, `lang.webdev`
-**Tools**: `ai`, `lsp`, `blink-cmp`, `firenvim`, `ux`
+**Tools**: `ai`, `lsp`, `blink-cmp`, `firenvim`, `ux`, `neovide`
 
 ## Requirements
 
