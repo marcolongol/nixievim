@@ -47,19 +47,19 @@ programs.nixvim = {
 
 **Base**: Essential plugins (neo-tree, treesitter, git, bufferline)
 **Core**: Full setup with AI tools, LSP, telescope, completion, language support
-**Neovide**: Core wrapped for the [Neovide](https://neovide.dev) GUI — includes transparency, animations, and font config
+**Neovide**: Core wrapped for the [Neovide](https://neovide.dev) GUI — includes transparency, animations, font config, and a `.desktop` entry for launcher integration
 
 ## Features
 
 - **AI Integration**: Claude Code, GitHub Copilot
 - **Language Support**: Nix, Python, Lua, Markdown, Web Development
-- **Modern UI**: Dashboard, telescope, neo-tree, bufferline
+- **Modern UI**: Dashboard, snacks.picker, neo-tree, bufferline
 - **Smart Completion**: blink-cmp with multiple sources
 - **Git Integration**: Built-in git workflow tools
 
 ## Available Modules
 
-**Core**: `common`, `neo-tree`, `telescope`, `treesitter`, `git`, `bufferline`, `dashboard`
+**Core**: `common`, `neo-tree`, `snacks`, `treesitter`, `git`, `bufferline`
 **Languages**: `lang.nix`, `lang.python`, `lang.lua`, `lang.md`, `lang.webdev`
 **Tools**: `ai`, `lsp`, `blink-cmp`, `firenvim`, `ux`, `neovide`
 
