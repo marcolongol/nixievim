@@ -2,7 +2,7 @@
   opts.guifont = "MesloLGM Nerd Font Mono:h10";
 
   globals = {
-    neovide_transparency = 0.8;
+    neovide_opacity = 0.8;
 
     # Cursor
     neovide_cursor_animation_length = 0.1;
