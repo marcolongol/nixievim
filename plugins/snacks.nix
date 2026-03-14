@@ -147,6 +147,7 @@ in {
   wKeyList = [
     (wKeyObj ["<leader>gg" "" "lazygit"])
     (wKeyObj ["<leader>f" "" "Find"])
+    (wKeyObj ["<leader>D" "󰕮" "Dashboard"])
   ];
 
   keymaps = [
@@ -157,6 +158,7 @@ in {
     (mkKeymap "n" "<leader>fh" "<cmd>lua Snacks.picker.help()<cr>" "Find help")
     (mkKeymap "n" "<leader>fr" "<cmd>lua Snacks.picker.recent()<cr>" "Recent files")
     (mkKeymap "n" "<leader>go" "<cmd>lua Snacks.gitbrowse()<cr>" "Open in browser")
+    (mkKeymap "n" "<leader>D" "<cmd>lua Snacks.dashboard()<cr>" "Open Dashboard")
     (mkKeymap "n" "<leader>z" "<cmd>lua Snacks.zen()<cr>" "Zen mode")
     (mkKeymap "n" "<leader>N" "<cmd>lua Snacks.notifier.show_history()<cr>" "Notification history")
   ];
