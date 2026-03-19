@@ -54,5 +54,9 @@ in {
   opts = {
     timeout = true;
     timeoutlen = 250;
+    list = true;
+    listchars = {
+      eol = "↓";
+    };
   };
 }
