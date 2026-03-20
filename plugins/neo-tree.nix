@@ -41,6 +41,17 @@ in {
       filesystem = {
         use_libuv_file_watcher = true;
         follow_current_file.enabled = true;
+        filtered_items = {
+          visible = false;
+          hide_dotfiles = true;
+          hide_gitignored = true;
+          hide_by_name = [
+            "__pycache__"
+            ".pytest_cache"
+            ".mypy_cache"
+            ".ruff_cache"
+          ];
+        };
       };
     };
   };
