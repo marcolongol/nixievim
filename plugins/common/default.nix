@@ -15,7 +15,6 @@ in {
 
   extraConfigLua = ''
     vim.opt.whichwrap:append("<>[]hl")
-    vim.opt.listchars:append("space:·")
 
     -- Diagnostic signs (new API, replaces deprecated sign_define)
     vim.diagnostic.config({
@@ -50,6 +49,7 @@ in {
   opts = {
     # MOUSE
     mouse = "a";
+    whichwrap = "b,s,<,>,[,],h,l";
 
     # CURSOR & DISPLAY
     cursorline = true;
@@ -100,6 +100,15 @@ in {
     virtualedit = "block";
     fillchars = {
       eob = " ";
+    };
+    listchars = {
+      tab = "→ ";
+      eol = "↓";
+      trail = "·";
+      nbsp = "␣";
+      extends = "»";
+      precedes = "«";
+      space = "·";
     };
     foldcolumn = "1";
     foldlevel = 99;
