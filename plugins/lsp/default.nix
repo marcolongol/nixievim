@@ -24,7 +24,7 @@ in {
         format_on_save = {
           timeout_ms = 500;
         };
-        default_format_opts.lsp_format = "prefer";
+        default_format_opts.lsp_format = "fallback";
         formatters_by_ft = {
           "_" = [
             "squeeze_blanks"
