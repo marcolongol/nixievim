@@ -23,6 +23,7 @@
         angular
         bash
         c
+        c_sharp
         cpp
         css
         dockerfile
