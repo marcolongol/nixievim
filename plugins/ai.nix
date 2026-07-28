@@ -27,7 +27,7 @@ in {
 
   plugins = {
     copilot-lua = {
-      enable = true;
+      enable = false;
       settings = {
         filetypes.markdown = true;
         suggestion = {
@@ -36,7 +36,7 @@ in {
         };
       };
     };
-    blink-copilot.enable = true;
+    blink-copilot.enable = false;
   };
 
   wKeyList = [

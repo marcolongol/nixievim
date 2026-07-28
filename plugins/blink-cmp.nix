@@ -23,7 +23,13 @@ in {
         signature = {enabled = true;};
         completion.ghost_text.enabled = true;
         sources = {
-          default = ["lsp" "path" "snippets" "buffer" "copilot"];
+          default = [
+            "lsp"
+            "path"
+            "snippets"
+            "buffer"
+            # "copilot"
+          ];
           providers = {
             copilot = {
               async = true;
