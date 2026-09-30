@@ -20,6 +20,7 @@ in {
     gitignore = {
       enable = true;
     };
+    diffview.enable = true;
   };
 
   wKeyList = [
@@ -78,5 +79,10 @@ in {
     (mkKeymap "x" "ih" ":<C-U>Gitsigns select_hunk<CR>" "GitSigns Select Hunk")
 
     (mkKeymap "n" "<leader>gi" "<cmd>Gitignore<cr>" "Edit/Generate .gitignore")
+
+    (mkKeymap "n" "<leader>gd" "<cmd>DiffviewOpen<cr>" "Diffview Open")
+    (mkKeymap "n" "<leader>gD" "<cmd>DiffviewClose<cr>" "Diffview Close")
+    (mkKeymap "n" "<leader>gf" "<cmd>DiffviewFileHistory %<cr>" "File History")
+    (mkKeymap "n" "<leader>gF" "<cmd>DiffviewFileHistory<cr>" "Branch History")
   ];
 }
