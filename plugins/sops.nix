@@ -1,4 +1,5 @@
 {
+  inputs,
   lib,
   pkgs,
   ...
@@ -25,13 +26,8 @@
     enable = true;
     package = pkgs.vimUtils.buildVimPlugin {
       pname = "nvim-sops";
-      version = "2026-01-29";
-      src = pkgs.fetchFromGitHub {
-        owner = "prismatic-koi";
-        repo = "nvim-sops";
-        rev = "1791eec21e78c9736ae504f02712a2f509c69b2c";
-        hash = "sha256-PkCZZuigHAAlGNcVD/bBTkGyZs9e3tgmnaDuPpKrBKM=";
-      };
+      version = inputs.nvim-sops.shortRev;
+      src = inputs.nvim-sops;
     };
   };
 

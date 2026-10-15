@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  buildifier = lib.getExe pkgs.bazel-buildtools;
+  buildifier = lib.getExe' pkgs.bazel-buildtools "buildifier";
 in {
   extraConfigLua = ''
     -- Use starlark treesitter parser for Tiltfiles

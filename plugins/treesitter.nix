@@ -4,14 +4,16 @@
     treesitter = {
       enable = true;
       folding.enable = true;
+      # Native Nixvim highlighting (nvim-treesitter main branch); the old
+      # settings.highlight.* path is legacy upstream config.
+      highlight = {
+        enable = true;
+        disable = [
+          "latex"
+          "markdown"
+        ];
+      };
       settings = {
-        highlight = {
-          enable = true;
-          disable = [
-            "latex"
-            "markdown"
-          ];
-        };
         indent = {
           enable = true;
         };

@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -7,13 +8,8 @@
   inherit (config.nixievim.mkKey) mkKeymap wKeyObj;
   claudecode = pkgs.vimUtils.buildVimPlugin {
     pname = "claudecode-nvim";
-    version = "2026-03-04";
-    src = pkgs.fetchFromGitHub {
-      owner = "coder";
-      repo = "claudecode.nvim";
-      rev = "432121f0f5b9bda041030d1e9e83b7ba3a93dd8f";
-      hash = "sha256-r8hAUpSsr8zNm+av8Mu5oILaTfEsXEnJmkzRmvi9pF8=";
-    };
+    version = inputs.claudecode-nvim.shortRev;
+    src = inputs.claudecode-nvim;
   };
 in {
   extraPlugins = [claudecode];
