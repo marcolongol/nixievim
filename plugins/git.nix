@@ -26,7 +26,8 @@ in {
   wKeyList = [
     (wKeyObj ["<leader>g" "" "git"])
     (wKeyObj ["<leader>gh" "󰫅" "hunks"])
-    (wKeyObj ["<leader>gb" "󰭐" "blame"])
+    (wKeyObj ["<leader>gd" "󰢪" "diffview"])
+    (wKeyObj ["<leader>gx" "󰘭" "conflict"])
   ];
 
   keymaps = [
@@ -44,7 +45,7 @@ in {
     (mkKeymap "n" "<leader>ghB" "<cmd>lua require('gitsigns').blame()<cr>" "Blame Buffer")
     (mkKeymap "n" "<leader>gb" "<cmd>lua require('gitsigns').blame_line()<cr>" "Blame")
     (mkKeymap "n" "<leader>ghd" "<cmd>lua require('gitsigns').diffthis()<cr>" "Diff This")
-    (mkKeymap "n" "<leader>ghD" "<cmd>lua require('gitsigns').diffthis('~')<cmd>" "Diff This ~")
+    (mkKeymap "n" "<leader>ghD" "<cmd>lua require('gitsigns').diffthis('~')<cr>" "Diff This ~")
     (mkKeymap "n" "<leader>ghj" "<cmd>lua require('gitsigns').nav_hunk('next')<cr>" "Next Hunk")
     (mkKeymap "n" "<leader>ghk" "<cmd>lua require('gitsigns').nav_hunk('prev')<cr>" "Prev Hunk")
 
@@ -80,9 +81,19 @@ in {
 
     (mkKeymap "n" "<leader>gi" "<cmd>Gitignore<cr>" "Edit/Generate .gitignore")
 
-    (mkKeymap "n" "<leader>gd" "<cmd>DiffviewOpen<cr>" "Diffview Open")
-    (mkKeymap "n" "<leader>gD" "<cmd>DiffviewClose<cr>" "Diffview Close")
-    (mkKeymap "n" "<leader>gf" "<cmd>DiffviewFileHistory %<cr>" "File History")
-    (mkKeymap "n" "<leader>gF" "<cmd>DiffviewFileHistory<cr>" "Branch History")
+    (mkKeymap "n" "<leader>gxo" "<cmd>GitConflictChooseOurs<cr>" "Choose Ours")
+    (mkKeymap "n" "<leader>gxt" "<cmd>GitConflictChooseTheirs<cr>" "Choose Theirs")
+    (mkKeymap "n" "<leader>gxb" "<cmd>GitConflictChooseBoth<cr>" "Choose Both")
+    (mkKeymap "n" "<leader>gx0" "<cmd>GitConflictChooseNone<cr>" "Choose None")
+    (mkKeymap "n" "<leader>gxl" "<cmd>GitConflictListQf<cr>" "List Conflicts")
+    (mkKeymap "n" "<leader>gxj" "<cmd>GitConflictNextConflict<cr>" "Next Conflict")
+    (mkKeymap "n" "<leader>gxk" "<cmd>GitConflictPrevConflict<cr>" "Prev Conflict")
+
+    (mkKeymap "n" "<leader>gdo" "<cmd>DiffviewOpen<cr>" "Diffview Open")
+    (mkKeymap "n" "<leader>gdc" "<cmd>DiffviewClose<cr>" "Diffview Close")
+    (mkKeymap "n" "<leader>gdf" "<cmd>DiffviewFileHistory %<cr>" "File History")
+    (mkKeymap "n" "<leader>gdF" "<cmd>DiffviewFileHistory<cr>" "Branch History")
+    (mkKeymap "n" "<leader>gdt" "<cmd>DiffviewToggleFiles<cr>" "Toggle File Panel")
+    (mkKeymap "n" "<leader>gdr" "<cmd>DiffviewRefresh<cr>" "Refresh")
   ];
 }
