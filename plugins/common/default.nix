@@ -1,6 +1,6 @@
 {
-  config,
   lib,
+  pkgs,
   ...
 }: let
   inherit (lib.nixvim) mkRaw;
@@ -35,6 +35,8 @@ in {
   luaLoader.enable = false;
 
   extraLuaPackages = lp: with lp; [luarocks];
+
+  extraPackages = with pkgs; [gcc ripgrep fd];
 
   globals = {
     mapleader = " ";

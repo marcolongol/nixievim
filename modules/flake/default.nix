@@ -3,7 +3,10 @@
   inputs,
   ...
 }: {
-  imports = [./devshell.nix];
+  imports = [
+    ./devshell.nix
+    ./home-manager.nix
+  ];
   perSystem = {
     lib,
     system,
