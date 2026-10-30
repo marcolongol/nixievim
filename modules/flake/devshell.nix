@@ -11,7 +11,9 @@
       packages = with pkgs; [
         nixd
         nix-output-monitor
-        nixpkgs-fmt
+        alejandra
+        statix
+        deadnix
       ];
       shellHook = ''
         echo 1>&2 "🐼: $(id -un) | 🧬: $(nix eval --raw --impure --expr 'builtins.currentSystem') | 🐧: $(uname -r) "
