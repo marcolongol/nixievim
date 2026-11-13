@@ -26,11 +26,20 @@
           description = "Neovide wrapper package to install.";
         };
       };
+      ai.apiKeyFile = lib.mkOption {
+        type = lib.types.nullOr lib.types.str;
+        default = null;
+        example = lib.literalExpression "config.sops.secrets.anthropic-api-key.path";
+        description = "File holding the Anthropic API key for minuet ghost-text completion.";
+      };
     };
 
     config = lib.mkIf cfg.enable {
       home.packages = [cfg.package] ++ lib.optional cfg.neovide.enable cfg.neovide.package;
-      home.sessionVariables = lib.mkIf cfg.defaultEditor {EDITOR = "nvim";};
+      home.sessionVariables = lib.mkMerge [
+        (lib.mkIf cfg.defaultEditor {EDITOR = "nvim";})
+        (lib.mkIf (cfg.ai.apiKeyFile != null) {NIXIEVIM_ANTHROPIC_KEY_FILE = cfg.ai.apiKeyFile;})
+      ];
     };
   };
 }

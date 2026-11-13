@@ -43,6 +43,7 @@ nix run "github:marcolongol/nixievim#neovide"   # Neovide GUI wrapper
 | `programs.nixievim.defaultEditor` | `false` | Set `$EDITOR` to `nvim` |
 | `programs.nixievim.neovide.enable` | `false` | Install the Neovide wrapper |
 | `programs.nixievim.neovide.package` | `packages.${system}.neovide` | Neovide wrapper package to install |
+| `programs.nixievim.ai.apiKeyFile` | `null` | File with an Anthropic API key for ghost-text completion (minuet). Falls back to `$ANTHROPIC_API_KEY`; without either, completion is manual-only |
 
 ### As a Package
 
