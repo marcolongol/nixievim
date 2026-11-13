@@ -65,8 +65,8 @@ in {
             accept = "<A-A>";
             accept_line = "<A-a>";
             accept_n_lines = "<A-z>";
-            next = "<A-]>";
-            prev = "<A-[>";
+            next = "<A-Down>";
+            prev = "<A-Up>";
             dismiss = "<A-e>";
           };
         };
